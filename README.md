@@ -11,12 +11,13 @@ Overall study overview. (a) The proposed research pipeline: data acquisition fro
 ![image](figs/figure2.png)
 Overview of the proposed model. The model comprises a primary forward pathway for MRI-to-PET synthesis and an auxiliary inverse pathway for PET-to-MRI reconstruction, where the latter serves as a regularizer to encourage the forward synthesis to retain MRI-consistent physiological structures.
 
+## 🚀 Results
 # ⚡ Visual comparison
 ![image](figs/figure3.png)
 Qualitative results under varying patch numbers. Five longitudinal cases are presented, showing the generated PET images and absolute error maps with respect to the ground-truth PET. Each case corresponds to one patient with two scans acquired at different time points. The proposed method maintains consistently high synthesis fidelity across different patch configurations.
 
 
-Quantitative evaluation of our approach under varying patch numbers. We compare the metric values across different patch configurations and report the associated 95% confidence intervals (95% CI) over five metrics.
+📄Quantitative evaluation of our approach under varying patch numbers. We compare the metric values across different patch configurations and report the associated 95% confidence intervals (95% CI) over five metrics.
 <table border="1">
   <thead>
     <tr>
@@ -83,6 +84,159 @@ Quantitative evaluation of our approach under varying patch numbers. We compare 
   </tbody>
 </table>
 
+📄Quantitative comparison of our approach against baseline methods over five evaluation metrics. We report the performance scores, the pairwise statistical significance tests with our method as the reference (all p < 0.001), and the corresponding 95% confidence intervals (95% CI) for each metric.
 
+<table border="1">
+  <thead>
+    <tr>
+      <th rowspan="2">Method</th>
+      <th colspan="2">PSNR</th>
+      <th colspan="2">SSIM</th>
+      <th colspan="2">NMAE</th>
+      <th colspan="2">NMSE</th>
+      <th colspan="2">NCC</th>
+    </tr>
+    <tr>
+      <th>value</th>
+      <th>p-value</th>
+      <th>value</th>
+      <th>p-value</th>
+      <th>value</th>
+      <th>p-value</th>
+      <th>value</th>
+      <th>p-value</th>
+      <th>value</th>
+      <th>p-value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CycleGAN</td>
+      <td>18.1074</td>
+      <td>p&lt;0.001</td>
+      <td>0.7918</td>
+      <td>p&lt;0.001</td>
+      <td>0.7628</td>
+      <td>p&lt;0.001</td>
+      <td>0.6666</td>
+      <td>p&lt;0.001</td>
+      <td>0.5705</td>
+      <td>p&lt;0.001</td>
+    </tr>
+    <tr>
+      <td>95% CI</td>
+      <td colspan="2">[17.9504, 18.2644]</td>
+      <td colspan="2">[0.7862, 0.7974]</td>
+      <td colspan="2">[0.7505, 0.7750]</td>
+      <td colspan="2">[0.6442, 0.6890]</td>
+      <td colspan="2">[0.5658, 0.5752]</td>
+    </tr>
+    <tr>
+      <td>pixel2pixel</td>
+      <td>26.7046</td>
+      <td>p&lt;0.001</td>
+      <td>0.9247</td>
+      <td>p&lt;0.001</td>
+      <td>0.2784</td>
+      <td>p&lt;0.001</td>
+      <td>0.1099</td>
+      <td>p&lt;0.001</td>
+      <td>0.9640</td>
+      <td>p&lt;0.001</td>
+    </tr>
+    <tr>
+      <td>95% CI</td>
+      <td colspan="2">[26.3142, 27.0950]</td>
+      <td colspan="2">[0.9198, 0.9295]</td>
+      <td colspan="2">[0.2516, 0.3052]</td>
+      <td colspan="2">[0.0850, 0.1347]</td>
+      <td colspan="2">[0.9614, 0.9665]</td>
+    </tr>
+    <tr>
+      <td>PASTA</td>
+      <td>25.9697</td>
+      <td>p&lt;0.001</td>
+      <td>0.9074</td>
+      <td>p&lt;0.001</td>
+      <td>0.2884</td>
+      <td>p&lt;0.001</td>
+      <td>0.1125</td>
+      <td>p&lt;0.001</td>
+      <td>0.9399</td>
+      <td>p&lt;0.001</td>
+    </tr>
+    <tr>
+      <td>95% CI</td>
+      <td colspan="2">[25.6626, 26.2769]</td>
+      <td colspan="2">[0.9025, 0.9122]</td>
+      <td colspan="2">[0.2762, 0.3006]</td>
+      <td colspan="2">[0.1041, 0.1209]</td>
+      <td colspan="2">[0.9357, 0.9440]</td>
+    </tr>
+    <tr>
+      <td>IL-CLDM</td>
+      <td>21.3346</td>
+      <td>p&lt;0.001</td>
+      <td>0.8232</td>
+      <td>p&lt;0.001</td>
+      <td>0.5083</td>
+      <td>p&lt;0.001</td>
+      <td>0.3313</td>
+      <td>p&lt;0.001</td>
+      <td>0.9280</td>
+      <td>p&lt;0.001</td>
+    </tr>
+    <tr>
+      <td>95% CI</td>
+      <td colspan="2">[24.5891, 24.9638]</td>
+      <td colspan="2">[0.8744, 0.8842]</td>
+      <td colspan="2">[0.3186, 0.3555]</td>
+      <td colspan="2">[0.1344, 0.1700]</td>
+      <td colspan="2">[0.9246, 0.9315]</td>
+    </tr>
+    <tr>
+      <td>FuseUNet</td>
+      <td>29.2902</td>
+      <td>p&lt;0.001</td>
+      <td>0.9412</td>
+      <td>p&lt;0.001</td>
+      <td>0.2022</td>
+      <td>p&lt;0.001</td>
+      <td>0.0541</td>
+      <td>p&lt;0.001</td>
+      <td>0.9742</td>
+      <td>p&lt;0.001</td>
+    </tr>
+    <tr>
+      <td>95% CI</td>
+      <td colspan="2">[28.9007, 29.6797]</td>
+      <td colspan="2">[0.9368, 0.9456]</td>
+      <td colspan="2">[0.1914, 0.2131]</td>
+      <td colspan="2">[0.0488, 0.0594]</td>
+      <td colspan="2">[0.9720, 0.9764]</td>
+    </tr>
+    <tr>
+      <td>OUR</td>
+      <td>30.5312</td>
+      <td>NA</td>
+      <td>0.9602</td>
+      <td>NA</td>
+      <td>0.1754</td>
+      <td>NA</td>
+      <td>0.0431</td>
+      <td>NA</td>
+      <td>0.9808</td>
+      <td>NA</td>
+    </tr>
+    <tr>
+      <td>95% CI</td>
+      <td colspan="2">[30.0391, 31.0233]</td>
+      <td colspan="2">[0.9507, 0.9603]</td>
+      <td colspan="2">[0.1625, 0.1883]</td>
+      <td colspan="2">[0.0368, 0.0494]</td>
+      <td colspan="2">[0.9786, 0.9830]</td>
+    </tr>
+  </tbody>
+</table>
 
 
