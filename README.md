@@ -11,11 +11,41 @@ Overall study overview. (a) The proposed research pipeline: data acquisition fro
 ![image](figs/figure2.png)
 Overview of the proposed model. The model comprises a primary forward pathway for MRI-to-PET synthesis and an auxiliary inverse pathway for PET-to-MRI reconstruction, where the latter serves as a regularizer to encourage the forward synthesis to retain MRI-consistent physiological structures.
 
-## 🚀 Results
-# ⚡ Visual comparison
+#🔧How to use
+## 🔧 Environment
+Please prepare an environment with Python 3.11, and then use the command "pip install -r requirements.txt" for the dependencies:
+```
+conda create -n GaussPET python=3.11 -y
+conda activate GaussPET
+pip install -r requirements.txt
+```
+## 🔧 Data Preparation
+```
+Dataset
+├─ train
+│  ├─ MRI
+│  │  ├─ 0.nii.gz
+│  │  ├─ 1.nii.gz
+│  │  └─ ...
+│  └─ PET
+│     ├─ 0.nii.gz
+│     ├─ 1.nii.gz
+│     └─ ...
+└─ test
+   ├─ MRI
+   │  ├─ 0.nii.gz
+   │  ├─ 1.nii.gz
+   │  └─ ...
+   └─ PET
+      ├─ 0.nii.gz
+      ├─ 1.nii.gz
+      └─ ...
+```
+
+# 🚀 Results
+## ⚡ Visual comparison
 ![image](figs/figure3.png)
 Qualitative results under varying patch numbers. Five longitudinal cases are presented, showing the generated PET images and absolute error maps with respect to the ground-truth PET. Each case corresponds to one patient with two scans acquired at different time points. The proposed method maintains consistently high synthesis fidelity across different patch configurations.
-
 
 📄Quantitative evaluation of our approach under varying patch numbers. We compare the metric values across different patch configurations and report the associated 95% confidence intervals (95% CI) over five metrics.
 <table border="1">
@@ -238,5 +268,6 @@ Qualitative results under varying patch numbers. Five longitudinal cases are pre
     </tr>
   </tbody>
 </table>
+
 
 
