@@ -20,6 +20,7 @@ conda activate GaussPET
 pip install -r requirements.txt
 ```
 ## 🔧 Data Preparation
+For training with custom data, the dataset should be preprocessed and organized following the structure shown below, in which MRI represents different MRI modalities.
 ```
 Dataset
 ├─ train
