@@ -45,6 +45,11 @@ Dataset
 ## 🔧 Experiment Settings
 You can directly configure the hyperparameters, data path, and save path in main.py. Other settings, such as the directories for saving model outputs, are not individually exposed for easy tuning in main.py, but they remain easy to modify with minimal effort.
 
+## 🔥 Train GaussPET
+After adjusting the hyperparameters, you can directly run the main.py file. It contains both the training and test processes:
+```
+python main.py
+```
 
 # 🚀 Results
 ## ⚡ Visual comparison
