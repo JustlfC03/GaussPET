@@ -1,0 +1,8 @@
+dynamic_network_architectures==0.4.2
+nibabel==5.3.3
+numpy==2.4.1
+scipy==1.17.0
+skimage==0.0
+torch==2.6.0+cu124
+torchvision==0.21.0+cu124
+tqdm==4.67.1
