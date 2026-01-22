@@ -20,7 +20,7 @@ conda activate GaussPET
 pip install -r requirements.txt
 ```
 ## 🔧 Data Preparation
-For training with custom data, the dataset should be preprocessed and organized following the structure shown below, in which MRI represents different MRI modalities.
+For training with custom data, the dataset should be preprocessed and organized following the structure shown below, in which MRI represents different MRI modalities. MRI and PET images are expected to be spatially aligned, and the MRI file names should match the modality settings defined in the main script.
 ```
 Dataset
 ├─ train
@@ -42,6 +42,9 @@ Dataset
       ├─ 1.nii.gz
       └─ ...
 ```
+## 🔧 Experiment Settings
+You can directly configure the hyperparameters, data path, and save path in main.py. Other settings, such as the directories for saving model outputs, are not individually exposed for easy tuning in main.py, but they remain easy to modify with minimal effort.
+
 
 # 🚀 Results
 ## ⚡ Visual comparison
