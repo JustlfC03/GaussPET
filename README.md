@@ -46,7 +46,6 @@ Qualitative results under varying patch numbers. Five longitudinal cases are pre
       <td>[0.0388, 0.0519]</td>
       <td>[0.9772, 0.9817]</td>
     </tr>
-
     <tr>
       <td>8</td>
       <td>30.5312</td>
@@ -63,7 +62,6 @@ Qualitative results under varying patch numbers. Five longitudinal cases are pre
       <td>[0.0368, 0.0494]</td>
       <td>[0.9786, 0.9830]</td>
     </tr>
-
     <tr>
       <td>64</td>
       <td>30.2591</td>
@@ -82,6 +80,7 @@ Qualitative results under varying patch numbers. Five longitudinal cases are pre
     </tr>
   </tbody>
 </table>
+
 
 
 
